@@ -13,14 +13,17 @@ body {
   padding: 2rem;
 }
 
+::selection {
+  background: $secondary_color;
+}
+
 // Images Sizing.
 img {
-  max-width: 40px;
+  width: 40px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: 2px solid $primary_color;
 }
-
 
 .testimonials {
   &-heading {
@@ -41,29 +44,69 @@ img {
       padding: 2rem;
       .author_box {
         display: flex;
-        gap: 1em;
         padding: 1rem 0;
+        gap: 1em;
         .name {
           font-family: $main_font;
         }
         .title {
-          font-size: 10px;
+          font-size: 9px;
           font-weight: 600;
         }
       }
     }
 
     .author_1 {
-        grid-column: 1 / 3;
-        background-color: $primary_bg;
+      grid-column: 1 / 3;
+      background-color: $primary_bg;
     }
     .author_3 {
-        grid-row: 2 / 5;
-        background-color: $primary_bg;
+      grid-row: 2 / 5;
+      background-color: $primary_bg;
     }
     .author_6 {
-        grid-column: 2 / 4;
-        background-color: $primary_bg;
+      grid-column: 2 / 4;
+      background-color: $primary_bg;
+    }
+  }
+}
+
+// Responsive Design.
+@media (max-width: 1048px) {
+  .testimonials {
+    &-heading {
+      font-size: 14px;
+    }
+    &_list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "bobe"
+        "jenny"
+        "dennis"
+        "maira"
+        "peter"
+        "sarah";
+      font-size: 13px;
+
+      .author_1 {
+        grid-area: bobe;
+      }
+      .author_2 {
+        grid-area: jenny;
+      }
+      .author_3 {
+        grid-area: dennis;
+      }
+      .author_4 {
+        grid-area: maira;
+      }
+      .author_5 {
+        grid-area: peter;
+      }
+      .author_6 {
+        grid-area: sarah;
+      }
     }
   }
 }
